@@ -1,0 +1,147 @@
+:root {
+    --primary-color: #00ff9d;
+    --secondary-color: #ff00ff;
+    --background-color: #0a0a0a;
+    --text-color: #ffffff;
+    --hud-background: rgba(0, 0, 0, 0.7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameContainer {
+    position: relative;
+    width: 800px;
+    height: 600px;
+}
+
+canvas {
+    background-color: #111;
+    box-shadow: 0 0 20px rgba(0, 255, 157, 0.2);
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(10, 10, 10, 0.9);
+    z-index: 10;
+}
+
+#startScreen h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(0, 255, 157, 0.5);
+}
+
+#startScreen p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.instructions {
+    color: var(--secondary-color) !important;
+    font-size: 1em !important;
+}
+
+.neon-button {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.neon-button:hover {
+    background: var(--primary-color);
+    color: var(--background-color);
+    box-shadow: 0 0 20px var(--primary-color);
+}
+
+.hidden {
+    display: none !important;
+}
+
+#gameHUD {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.hud-top {
+    padding: 20px;
+}
+
+.squad-status {
+    background: var(--hud-background);
+    border: 1px solid var(--primary-color);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.health-bar, .ammo-counter {
+    text-align: center;
+}
+
+.health-label, .ammo-label {
+    font-size: 0.8em;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.health-value, .ammo-value {
+    font-size: 1.2em;
+    color: var(--text-color);
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.low-health {
+    animation: pulse 1s infinite;
+    color: #ff0000;
+}
+
+.low-ammo {
+    animation: pulse 1s infinite;
+    color: #ffff00;
+}
