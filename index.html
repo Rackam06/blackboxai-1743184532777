@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Adventures</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="gameContainer">
+        <!-- Start Screen -->
+        <div id="startScreen" class="screen">
+            <h1>Cosmic Adventures</h1>
+            <p>Lead your squad of space marines through an abandoned ship.</p>
+            <p class="instructions">Click to move your squad. Survive the horror.</p>
+            <button id="startButton" class="neon-button">Start Mission</button>
+        </div>
+
+        <!-- Game Canvas -->
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- Game HUD -->
+        <div id="gameHUD" class="hidden">
+            <div class="hud-top">
+                <div class="squad-status">
+                    <div class="health-bar">
+                        <div class="health-label">Squad Health</div>
+                        <div class="health-value" id="healthValue">100%</div>
+                    </div>
+                    <div class="ammo-counter">
+                        <div class="ammo-label">Ammo</div>
+                        <div class="ammo-value" id="ammoValue">30</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
